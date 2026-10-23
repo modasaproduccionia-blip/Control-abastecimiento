@@ -1,0 +1,1195 @@
+{
+  "buses": [
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-09-18",
+        "chasis": "2026-09-07",
+        "estr": "2026-09-09",
+        "lib": "2026-10-02",
+        "of": "2026-09-25",
+        "pint": "2026-09-14"
+      },
+      "id": "L2_Z5PSC6B-32",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-32"
+    },
+    {
+      "cliente": "MEXICO (CESAR PARRA) PKD",
+      "d": {
+        "acab": "2026-09-25",
+        "chasis": null,
+        "estr": "2026-09-16",
+        "lib": "2026-10-16",
+        "of": "2026-10-02",
+        "pint": "2026-09-21"
+      },
+      "id": "L2_Z5PSCK-8",
+      "mes": "OCTUBRE",
+      "op": "Z5PSCK-8"
+    },
+    {
+      "cliente": "MEXICO (LOLE MARTINEZ) PKD",
+      "d": {
+        "acab": "2026-09-28",
+        "chasis": null,
+        "estr": "2026-09-16",
+        "lib": "2026-10-16",
+        "of": "2026-10-02",
+        "pint": "2026-09-22"
+      },
+      "id": "L2_Z5PSCK-9",
+      "mes": "OCTUBRE",
+      "op": "Z5PSCK-9"
+    },
+    {
+      "cliente": "MEXICO (FRED VARGAS) PKD",
+      "d": {
+        "acab": "2026-09-28",
+        "chasis": null,
+        "estr": "2026-09-17",
+        "lib": "2026-10-21",
+        "of": "2026-10-05",
+        "pint": "2026-09-22"
+      },
+      "id": "L2_Z5PSCK-10",
+      "mes": "OCTUBRE",
+      "op": "Z5PSCK-10"
+    },
+    {
+      "cliente": "MEXICO (EEUU) PKD",
+      "d": {
+        "acab": "2026-09-29",
+        "chasis": null,
+        "estr": "2026-09-18",
+        "lib": "2026-10-22",
+        "of": "2026-10-06",
+        "pint": "2026-09-23"
+      },
+      "id": "L2_Z5PSCK-11",
+      "mes": "OCTUBRE",
+      "op": "Z5PSCK-11"
+    },
+    {
+      "cliente": "MEXICO (EEUU) PKD",
+      "d": {
+        "acab": "2026-09-30",
+        "chasis": null,
+        "estr": "2026-09-18",
+        "lib": "2026-10-22",
+        "of": "2026-10-06",
+        "pint": "2026-09-24"
+      },
+      "id": "L2_Z5PSCK-12",
+      "mes": "OCTUBRE",
+      "op": "Z5PSCK-12"
+    },
+    {
+      "cliente": "EXCLUCIVA L2",
+      "d": {
+        "acab": "2026-10-01",
+        "chasis": "2026-09-17",
+        "estr": "2026-09-21",
+        "lib": "2026-10-15",
+        "of": "2026-10-07",
+        "pint": "2026-09-25"
+      },
+      "id": "L2_Z5PSC6B-23",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-23"
+    },
+    {
+      "cliente": "EXCLUCIVA L2",
+      "d": {
+        "acab": "2026-10-01",
+        "chasis": "2026-09-17",
+        "estr": "2026-09-21",
+        "lib": "2026-10-16",
+        "of": "2026-10-09",
+        "pint": "2026-09-25"
+      },
+      "id": "L2_Z5PSC6B-24",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-24"
+    },
+    {
+      "cliente": "EXCLUCIVA L2",
+      "d": {
+        "acab": "2026-10-02",
+        "chasis": "2026-09-18",
+        "estr": "2026-09-22",
+        "lib": "2026-10-16",
+        "of": "2026-10-09",
+        "pint": "2026-09-28"
+      },
+      "id": "L2_Z5PSC6B-25",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-25"
+    },
+    {
+      "cliente": "EXCLUCIVA L2",
+      "d": {
+        "acab": "2026-10-05",
+        "chasis": "2026-09-21",
+        "estr": "2026-09-23",
+        "lib": "2026-10-19",
+        "of": "2026-10-12",
+        "pint": "2026-09-29"
+      },
+      "id": "L2_Z5PSC6B-26",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-26"
+    },
+    {
+      "cliente": "JETSUR",
+      "d": {
+        "acab": "2026-10-05",
+        "chasis": "2026-09-21",
+        "estr": "2026-09-23",
+        "lib": "2026-10-20",
+        "of": "2026-10-13",
+        "pint": "2026-09-29"
+      },
+      "id": "L2_Z5PSC6B-47",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-47"
+    },
+    {
+      "cliente": "JETSUR",
+      "d": {
+        "acab": "2026-10-06",
+        "chasis": "2026-09-22",
+        "estr": "2026-09-24",
+        "lib": "2026-10-20",
+        "of": "2026-10-13",
+        "pint": "2026-09-30"
+      },
+      "id": "L2_Z5PSC6B-48",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-48"
+    },
+    {
+      "cliente": "JETSUR",
+      "d": {
+        "acab": "2026-10-07",
+        "chasis": "2026-09-23",
+        "estr": "2026-09-25",
+        "lib": "2026-10-21",
+        "of": "2026-10-14",
+        "pint": "2026-10-01"
+      },
+      "id": "L2_Z5PSC6B-49",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-49"
+    },
+    {
+      "cliente": "JETSUR",
+      "d": {
+        "acab": "2026-10-07",
+        "chasis": "2026-09-23",
+        "estr": "2026-09-25",
+        "lib": "2026-10-22",
+        "of": "2026-10-15",
+        "pint": "2026-10-01"
+      },
+      "id": "L2_Z5PSC6B-50",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-50"
+    },
+    {
+      "cliente": "JETSUR",
+      "d": {
+        "acab": "2026-10-09",
+        "chasis": "2026-09-24",
+        "estr": "2026-09-28",
+        "lib": "2026-10-22",
+        "of": "2026-10-15",
+        "pint": "2026-10-02"
+      },
+      "id": "L2_Z5PSC6B-51",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-51"
+    },
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-10-09",
+        "chasis": "2026-09-24",
+        "estr": "2026-09-28",
+        "lib": "2026-10-23",
+        "of": "2026-10-16",
+        "pint": "2026-10-02"
+      },
+      "id": "L2_Z5PSC6B-42",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-42"
+    },
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-10-12",
+        "chasis": "2026-09-25",
+        "estr": "2026-09-29",
+        "lib": "2026-10-26",
+        "of": "2026-10-19",
+        "pint": "2026-10-05"
+      },
+      "id": "L2_Z5PSC6B-46",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-46"
+    },
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-10-13",
+        "chasis": "2026-09-28",
+        "estr": "2026-09-30",
+        "lib": "2026-10-26",
+        "of": "2026-10-19",
+        "pint": "2026-10-06"
+      },
+      "id": "L2_Z5PSC6B-43",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-43"
+    },
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-10-13",
+        "chasis": "2026-09-28",
+        "estr": "2026-09-30",
+        "lib": "2026-10-27",
+        "of": "2026-10-20",
+        "pint": "2026-10-06"
+      },
+      "id": "L2_Z5PSC6B-44",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-44"
+    },
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-10-14",
+        "chasis": "2026-09-29",
+        "estr": "2026-10-01",
+        "lib": "2026-10-28",
+        "of": "2026-10-21",
+        "pint": "2026-10-07"
+      },
+      "id": "L2_Z5PSC6B-45",
+      "mes": "OCTUBRE",
+      "op": "Z5PSC6B-45"
+    },
+    {
+      "cliente": "Andimar (VVP)",
+      "d": {
+        "acab": "2026-10-15",
+        "chasis": "2026-09-30",
+        "estr": "2026-10-02",
+        "lib": "2026-10-28",
+        "of": "2026-10-21",
+        "pint": "2026-10-09"
+      },
+      "id": "L2_Z5PVO6B-28",
+      "mes": "OCTUBRE",
+      "op": "Z5PVO6B-28"
+    },
+    {
+      "cliente": "Andimar (VVP)",
+      "d": {
+        "acab": "2026-10-15",
+        "chasis": "2026-09-30",
+        "estr": "2026-10-02",
+        "lib": "2026-10-29",
+        "of": "2026-10-22",
+        "pint": "2026-10-09"
+      },
+      "id": "L2_Z5PVO6B-29",
+      "mes": "OCTUBRE",
+      "op": "Z5PVO6B-29"
+    },
+    {
+      "cliente": "Andimar (VVP)",
+      "d": {
+        "acab": "2026-10-16",
+        "chasis": "2026-10-01",
+        "estr": "2026-10-05",
+        "lib": "2026-10-30",
+        "of": "2026-10-23",
+        "pint": "2026-10-12"
+      },
+      "id": "L2_Z5PVO6B-30",
+      "mes": "OCTUBRE",
+      "op": "Z5PVO6B-30"
+    },
+    {
+      "cliente": "MEXICO (STOCK)",
+      "d": {
+        "acab": "2026-10-19",
+        "chasis": "2026-10-02",
+        "estr": "2026-10-06",
+        "lib": "2026-11-02",
+        "of": "2026-10-23",
+        "pint": "2026-10-13"
+      },
+      "id": "L2_Z5PSC6B-36",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-36"
+    },
+    {
+      "cliente": "MEXICO (STOCK)",
+      "d": {
+        "acab": "2026-10-19",
+        "chasis": "2026-10-02",
+        "estr": "2026-10-06",
+        "lib": "2026-11-02",
+        "of": "2026-10-26",
+        "pint": "2026-10-13"
+      },
+      "id": "L2_Z5PSC6B-37",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-37"
+    },
+    {
+      "cliente": "MEXICO (CHAP)",
+      "d": {
+        "acab": "2026-10-20",
+        "chasis": "2026-10-05",
+        "estr": "2026-10-07",
+        "lib": "2026-11-02",
+        "of": "2026-10-26",
+        "pint": "2026-10-14"
+      },
+      "id": "L2_Z5PSC6B-38",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-38"
+    },
+    {
+      "cliente": "MEXICO (GRUPO ALPEZ)",
+      "d": {
+        "acab": "2026-10-21",
+        "chasis": "2026-10-06",
+        "estr": "2026-10-09",
+        "lib": "2026-11-03",
+        "of": "2026-10-27",
+        "pint": "2026-10-15"
+      },
+      "id": "L2_Z5PSC6B-39",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-39"
+    },
+    {
+      "cliente": "MEXICO (STOCK)",
+      "d": {
+        "acab": "2026-10-21",
+        "chasis": "2026-10-06",
+        "estr": "2026-10-09",
+        "lib": "2026-11-03",
+        "of": "2026-10-27",
+        "pint": "2026-10-15"
+      },
+      "id": "L2_Z5PSC6B-40",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-40"
+    },
+    {
+      "cliente": "MAGDALENA PKD",
+      "d": {
+        "acab": "2026-10-22",
+        "chasis": null,
+        "estr": "2026-10-12",
+        "lib": "2026-11-12",
+        "of": "2026-10-28",
+        "pint": "2026-10-16"
+      },
+      "id": "L2_Z5PSCK-13",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSCK-13"
+    },
+    {
+      "cliente": "MAGDALENA PKD",
+      "d": {
+        "acab": "2026-10-23",
+        "chasis": null,
+        "estr": "2026-10-13",
+        "lib": "2026-11-12",
+        "of": "2026-10-28",
+        "pint": "2026-10-19"
+      },
+      "id": "L2_Z5PSCK-14",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSCK-14"
+    },
+    {
+      "cliente": "CONTRASHUILA PKD",
+      "d": {
+        "acab": "2026-10-23",
+        "chasis": null,
+        "estr": "2026-10-13",
+        "lib": "2026-11-13",
+        "of": "2026-10-29",
+        "pint": "2026-10-19"
+      },
+      "id": "L2_Z5PSCK-15",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSCK-15"
+    },
+    {
+      "cliente": "EXCLUCIVA L2",
+      "d": {
+        "acab": "2026-10-26",
+        "chasis": "2026-10-12",
+        "estr": "2026-10-14",
+        "lib": "2026-11-05",
+        "of": "2026-10-29",
+        "pint": "2026-10-20"
+      },
+      "id": "L2_Z5PSC6B-27",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-27"
+    },
+    {
+      "cliente": "Stock  Vivipra (ex tacoha)",
+      "d": {
+        "acab": "2026-10-26",
+        "chasis": "2026-10-13",
+        "estr": "2026-10-15",
+        "lib": "2026-11-06",
+        "of": "2026-10-30",
+        "pint": "2026-10-20"
+      },
+      "id": "L2_Z5PSC6B-52",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-52"
+    },
+    {
+      "cliente": "Stock  Vivipra (ex tacoha)",
+      "d": {
+        "acab": "2026-10-27",
+        "chasis": "2026-10-13",
+        "estr": "2026-10-15",
+        "lib": "2026-11-06",
+        "of": "2026-10-30",
+        "pint": "2026-10-21"
+      },
+      "id": "L2_Z5PSC6B-53",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-53"
+    },
+    {
+      "cliente": "Stock  Vivipra (ex tacoha)",
+      "d": {
+        "acab": "2026-10-27",
+        "chasis": "2026-10-14",
+        "estr": "2026-10-16",
+        "lib": "2026-11-09",
+        "of": "2026-11-02",
+        "pint": "2026-10-21"
+      },
+      "id": "L2_Z5PSC6B-54",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-54"
+    },
+    {
+      "cliente": "Stock  Vivipra (ex tacoha)",
+      "d": {
+        "acab": "2026-10-28",
+        "chasis": "2026-10-15",
+        "estr": "2026-10-19",
+        "lib": "2026-11-09",
+        "of": "2026-11-02",
+        "pint": "2026-10-22"
+      },
+      "id": "L2_Z5PSC6B-55",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-55"
+    },
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-10-28",
+        "chasis": "2026-10-15",
+        "estr": "2026-10-19",
+        "lib": "2026-11-10",
+        "of": "2026-11-03",
+        "pint": "2026-10-22"
+      },
+      "id": "L2_Z5PSC6B-56",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-56"
+    },
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-10-29",
+        "chasis": "2026-10-16",
+        "estr": "2026-10-20",
+        "lib": "2026-11-10",
+        "of": "2026-11-03",
+        "pint": "2026-10-23"
+      },
+      "id": "L2_Z5PSC6B-57",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-57"
+    },
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-10-29",
+        "chasis": "2026-10-16",
+        "estr": "2026-10-20",
+        "lib": "2026-11-11",
+        "of": "2026-11-04",
+        "pint": "2026-10-23"
+      },
+      "id": "L2_Z5PSC6B-58",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-58"
+    },
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-10-30",
+        "chasis": "2026-10-19",
+        "estr": "2026-10-21",
+        "lib": "2026-11-11",
+        "of": "2026-11-04",
+        "pint": "2026-10-26"
+      },
+      "id": "L2_Z5PSC6B-59",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-59"
+    },
+    {
+      "cliente": "Stock  Vivipra",
+      "d": {
+        "acab": "2026-10-30",
+        "chasis": "2026-10-19",
+        "estr": "2026-10-21",
+        "lib": "2026-11-12",
+        "of": "2026-11-05",
+        "pint": "2026-10-26"
+      },
+      "id": "L2_Z5PSC6B-60",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-60"
+    },
+    {
+      "cliente": "SUPER CIVA",
+      "d": {
+        "acab": "2026-11-02",
+        "chasis": "2026-10-20",
+        "estr": "2026-10-22",
+        "lib": "2026-11-12",
+        "of": "2026-11-05",
+        "pint": "2026-10-27"
+      },
+      "id": "L2_Z5PSC6B-61",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-61"
+    },
+    {
+      "cliente": "HUAMBOCANCHA SA",
+      "d": {
+        "acab": "2026-11-02",
+        "chasis": "2026-10-20",
+        "estr": "2026-10-22",
+        "lib": "2026-11-13",
+        "of": "2026-11-06",
+        "pint": "2026-10-27"
+      },
+      "id": "L2_Z36FVWM1-35",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-35"
+    },
+    {
+      "cliente": "SUPER CIVA",
+      "d": {
+        "acab": "2026-11-03",
+        "chasis": "2026-10-21",
+        "estr": "2026-10-23",
+        "lib": "2026-11-13",
+        "of": "2026-11-06",
+        "pint": "2026-10-28"
+      },
+      "id": "L2_Z5PSC6B-62",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-62"
+    },
+    {
+      "cliente": "SUPER CIVA",
+      "d": {
+        "acab": "2026-11-03",
+        "chasis": "2026-10-21",
+        "estr": "2026-10-23",
+        "lib": "2026-11-16",
+        "of": "2026-11-09",
+        "pint": "2026-10-28"
+      },
+      "id": "L2_Z5PSC6B-63",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-63"
+    },
+    {
+      "cliente": "SUPER CIVA",
+      "d": {
+        "acab": "2026-11-04",
+        "chasis": "2026-10-22",
+        "estr": "2026-10-26",
+        "lib": "2026-11-16",
+        "of": "2026-11-09",
+        "pint": "2026-10-29"
+      },
+      "id": "L2_Z5PSC6B-64",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-64"
+    },
+    {
+      "cliente": "HUAMBOCANCHA SA",
+      "d": {
+        "acab": "2026-11-04",
+        "chasis": "2026-10-22",
+        "estr": "2026-10-26",
+        "lib": "2026-11-17",
+        "of": "2026-11-10",
+        "pint": "2026-10-29"
+      },
+      "id": "L2_Z36FVWM1-36",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-36"
+    },
+    {
+      "cliente": "ETRANSA",
+      "d": {
+        "acab": "2026-11-05",
+        "chasis": "2026-10-23",
+        "estr": "2026-10-27",
+        "lib": "2026-11-17",
+        "of": "2026-11-10",
+        "pint": "2026-10-30"
+      },
+      "id": "L2_Z36FVWM1-37",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-37"
+    },
+    {
+      "cliente": "ETRANSA",
+      "d": {
+        "acab": "2026-11-05",
+        "chasis": "2026-10-23",
+        "estr": "2026-10-27",
+        "lib": "2026-11-18",
+        "of": "2026-11-11",
+        "pint": "2026-10-30"
+      },
+      "id": "L2_Z36FVWM1-38",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-38"
+    },
+    {
+      "cliente": "LA COLPA",
+      "d": {
+        "acab": "2026-11-06",
+        "chasis": "2026-10-26",
+        "estr": "2026-10-28",
+        "lib": "2026-11-18",
+        "of": "2026-11-11",
+        "pint": "2026-11-02"
+      },
+      "id": "L2_Z36FVWM1-39",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-39"
+    },
+    {
+      "cliente": "LA COLPA",
+      "d": {
+        "acab": "2026-11-06",
+        "chasis": "2026-10-26",
+        "estr": "2026-10-28",
+        "lib": "2026-11-19",
+        "of": "2026-11-12",
+        "pint": "2026-11-02"
+      },
+      "id": "L2_Z36FVWM1-40",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-40"
+    },
+    {
+      "cliente": "MUNDO TRANSPORTES",
+      "d": {
+        "acab": "2026-11-09",
+        "chasis": "2026-10-27",
+        "estr": "2026-10-29",
+        "lib": "2026-11-19",
+        "of": "2026-11-12",
+        "pint": "2026-11-03"
+      },
+      "id": "L2_Z36FVWM1-41",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-41"
+    },
+    {
+      "cliente": "ANDY TOURS",
+      "d": {
+        "acab": "2026-11-09",
+        "chasis": "2026-10-27",
+        "estr": "2026-10-29",
+        "lib": "2026-11-23",
+        "of": "2026-11-13",
+        "pint": "2026-11-03"
+      },
+      "id": "L2_Z36FVWM1-42",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-42"
+    },
+    {
+      "cliente": "ABRAHAM",
+      "d": {
+        "acab": "2026-11-10",
+        "chasis": "2026-10-28",
+        "estr": "2026-10-30",
+        "lib": "2026-11-23",
+        "of": "2026-11-13",
+        "pint": "2026-11-04"
+      },
+      "id": "L2_Z36FVWM1-43",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-43"
+    },
+    {
+      "cliente": "HNOS QUISPE",
+      "d": {
+        "acab": "2026-11-10",
+        "chasis": "2026-10-28",
+        "estr": "2026-10-30",
+        "lib": "2026-11-24",
+        "of": "2026-11-16",
+        "pint": "2026-11-04"
+      },
+      "id": "L2_Z36FVWM1-44",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-44"
+    },
+    {
+      "cliente": "VERICORP",
+      "d": {
+        "acab": "2026-11-11",
+        "chasis": "2026-10-29",
+        "estr": "2026-11-02",
+        "lib": "2026-11-24",
+        "of": "2026-11-16",
+        "pint": "2026-11-05"
+      },
+      "id": "L2_Z36FVWM1-45",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-45"
+    },
+    {
+      "cliente": "PASCUSEG",
+      "d": {
+        "acab": "2026-11-11",
+        "chasis": "2026-10-29",
+        "estr": "2026-11-02",
+        "lib": "2026-11-25",
+        "of": "2026-11-17",
+        "pint": "2026-11-05"
+      },
+      "id": "L2_Z36FVWM1-46",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-46"
+    },
+    {
+      "cliente": "KOLLPA",
+      "d": {
+        "acab": "2026-11-12",
+        "chasis": "2026-10-30",
+        "estr": "2026-11-03",
+        "lib": "2026-11-25",
+        "of": "2026-11-17",
+        "pint": "2026-11-06"
+      },
+      "id": "L2_Z36FVWM1-47",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-47"
+    },
+    {
+      "cliente": "TRANSP. CHAVEZ",
+      "d": {
+        "acab": "2026-11-12",
+        "chasis": "2026-10-30",
+        "estr": "2026-11-03",
+        "lib": "2026-11-26",
+        "of": "2026-11-18",
+        "pint": "2026-11-06"
+      },
+      "id": "L2_Z36FVWM1-48",
+      "mes": "NOVIEMBRE",
+      "op": "Z36FVWM1-48"
+    },
+    {
+      "cliente": "SUPER CIVA",
+      "d": {
+        "acab": "2026-11-13",
+        "chasis": "2026-11-02",
+        "estr": "2026-11-04",
+        "lib": "2026-11-26",
+        "of": "2026-11-18",
+        "pint": "2026-11-09"
+      },
+      "id": "L2_Z5PSC6B-65",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PSC6B-65"
+    },
+    {
+      "cliente": "Andimar (VVP)",
+      "d": {
+        "acab": "2026-11-13",
+        "chasis": "2026-11-02",
+        "estr": "2026-11-04",
+        "lib": "2026-11-27",
+        "of": "2026-11-19",
+        "pint": "2026-11-09"
+      },
+      "id": "L2_Z5PVO6B-31",
+      "mes": "NOVIEMBRE",
+      "op": "Z5PVO6B-31"
+    },
+    {
+      "cliente": "COPETRAN PKD",
+      "d": {
+        "acab": "2026-11-16",
+        "chasis": null,
+        "estr": "2026-11-05",
+        "lib": "2026-12-03",
+        "of": "2026-11-19",
+        "pint": "2026-11-10"
+      },
+      "id": "L2_Z5PMBKB-2",
+      "mes": "DICIEMBRE",
+      "op": "Z5PMBKB-2"
+    },
+    {
+      "cliente": "COPETRAN PKD",
+      "d": {
+        "acab": "2026-11-16",
+        "chasis": null,
+        "estr": "2026-11-05",
+        "lib": "2026-12-04",
+        "of": "2026-11-23",
+        "pint": "2026-11-10"
+      },
+      "id": "L2_Z5PMBKB-3",
+      "mes": "DICIEMBRE",
+      "op": "Z5PMBKB-3"
+    },
+    {
+      "cliente": "COPETRAN PKD",
+      "d": {
+        "acab": "2026-11-17",
+        "chasis": null,
+        "estr": "2026-11-06",
+        "lib": "2026-12-07",
+        "of": "2026-11-23",
+        "pint": "2026-11-11"
+      },
+      "id": "L2_Z5PMBKB-4",
+      "mes": "DICIEMBRE",
+      "op": "Z5PMBKB-4"
+    },
+    {
+      "cliente": "COPETRAN PKD",
+      "d": {
+        "acab": "2026-11-17",
+        "chasis": null,
+        "estr": "2026-11-06",
+        "lib": "2026-12-11",
+        "of": "2026-11-24",
+        "pint": "2026-11-11"
+      },
+      "id": "L2_Z5PMBKB-5",
+      "mes": "DICIEMBRE",
+      "op": "Z5PMBKB-5"
+    },
+    {
+      "cliente": "COPETRAN PKD",
+      "d": {
+        "acab": "2026-11-18",
+        "chasis": null,
+        "estr": "2026-11-09",
+        "lib": "2026-12-14",
+        "of": "2026-11-24",
+        "pint": "2026-11-12"
+      },
+      "id": "L2_Z5PMBKB-6",
+      "mes": "DICIEMBRE",
+      "op": "Z5PMBKB-6"
+    },
+    {
+      "cliente": "COPETRAN PKD",
+      "d": {
+        "acab": "2026-11-18",
+        "chasis": null,
+        "estr": "2026-11-09",
+        "lib": "2026-12-16",
+        "of": "2026-11-25",
+        "pint": "2026-11-12"
+      },
+      "id": "L2_Z5PMBKB-7",
+      "mes": "DICIEMBRE",
+      "op": "Z5PMBKB-7"
+    },
+    {
+      "cliente": "THC",
+      "d": {
+        "acab": "2026-11-19",
+        "chasis": "2026-11-06",
+        "estr": "2026-11-10",
+        "lib": "2026-12-02",
+        "of": "2026-11-25",
+        "pint": "2026-11-13"
+      },
+      "id": "L2_Z36FVWM1-49",
+      "mes": "DICIEMBRE",
+      "op": "Z36FVWM1-49"
+    },
+    {
+      "cliente": "TRANSP. HERRERA",
+      "d": {
+        "acab": "2026-11-19",
+        "chasis": "2026-11-06",
+        "estr": "2026-11-10",
+        "lib": "2026-12-03",
+        "of": "2026-11-26",
+        "pint": "2026-11-13"
+      },
+      "id": "L2_Z36FVWM1-50",
+      "mes": "DICIEMBRE",
+      "op": "Z36FVWM1-50"
+    },
+    {
+      "cliente": "TRANSP. HERRERA",
+      "d": {
+        "acab": "2026-11-23",
+        "chasis": "2026-11-09",
+        "estr": "2026-11-11",
+        "lib": "2026-12-03",
+        "of": "2026-11-26",
+        "pint": "2026-11-16"
+      },
+      "id": "L2_Z36FVWM1-51",
+      "mes": "DICIEMBRE",
+      "op": "Z36FVWM1-51"
+    },
+    {
+      "cliente": "BELLA LUZ",
+      "d": {
+        "acab": "2026-11-23",
+        "chasis": "2026-11-09",
+        "estr": "2026-11-11",
+        "lib": "2026-12-04",
+        "of": "2026-11-27",
+        "pint": "2026-11-16"
+      },
+      "id": "L2_Z5SC8X2",
+      "mes": "DICIEMBRE",
+      "op": "Z5 SC 8X2"
+    },
+    {
+      "cliente": "CORMAR VVP",
+      "d": {
+        "acab": "2026-11-24",
+        "chasis": "2026-11-10",
+        "estr": "2026-11-12",
+        "lib": "2026-12-04",
+        "of": "2026-11-27",
+        "pint": "2026-11-17"
+      },
+      "id": "L2_Z5PVO8X2",
+      "mes": "DICIEMBRE",
+      "op": "Z5PVO8X2"
+    },
+    {
+      "cliente": "CORMAR VVP",
+      "d": {
+        "acab": "2026-11-24",
+        "chasis": "2026-11-10",
+        "estr": "2026-11-12",
+        "lib": "2026-12-07",
+        "of": "2026-11-30",
+        "pint": "2026-11-17"
+      },
+      "id": "L2_Z5PVO8X2~2",
+      "mes": "DICIEMBRE",
+      "op": "Z5PVO8X2"
+    },
+    {
+      "cliente": "CITUAM (360f V2)",
+      "d": {
+        "acab": "2026-11-25",
+        "chasis": "2026-11-11",
+        "estr": "2026-11-13",
+        "lib": "2026-12-07",
+        "of": "2026-11-30",
+        "pint": "2026-11-18"
+      },
+      "id": "L2_Z36FVWM1-52",
+      "mes": "DICIEMBRE",
+      "op": "Z36FVWM1-52"
+    },
+    {
+      "cliente": "CITUAM (360f V2)",
+      "d": {
+        "acab": "2026-11-25",
+        "chasis": "2026-11-11",
+        "estr": "2026-11-13",
+        "lib": "2026-12-10",
+        "of": "2026-12-01",
+        "pint": "2026-11-18"
+      },
+      "id": "L2_Z36FVWM1-53",
+      "mes": "DICIEMBRE",
+      "op": "Z36FVWM1-53"
+    },
+    {
+      "cliente": "SOUCIONES TECNICAS",
+      "d": {
+        "acab": "2026-11-26",
+        "chasis": "2026-11-12",
+        "estr": "2026-11-16",
+        "lib": "2026-12-10",
+        "of": "2026-12-01",
+        "pint": "2026-11-19"
+      },
+      "id": "L2_Z36FVWM1-54",
+      "mes": "DICIEMBRE",
+      "op": "Z36FVWM1-54"
+    },
+    {
+      "cliente": "MONTERO (V1)",
+      "d": {
+        "acab": "2026-11-26",
+        "chasis": "2026-11-12",
+        "estr": "2026-11-16",
+        "lib": "2026-12-11",
+        "of": "2026-12-02",
+        "pint": "2026-11-19"
+      },
+      "id": "L2_F250SC",
+      "mes": "DICIEMBRE",
+      "op": "F250 SC"
+    },
+    {
+      "cliente": "MONTERO (V1)",
+      "d": {
+        "acab": "2026-11-27",
+        "chasis": "2026-11-13",
+        "estr": "2026-11-17",
+        "lib": "2026-12-11",
+        "of": "2026-12-02",
+        "pint": "2026-11-23"
+      },
+      "id": "L2_F250SC~2",
+      "mes": "DICIEMBRE",
+      "op": "F250 SC"
+    },
+    {
+      "cliente": "MONTERO (V1)",
+      "d": {
+        "acab": "2026-11-27",
+        "chasis": "2026-11-13",
+        "estr": "2026-11-17",
+        "lib": "2026-12-14",
+        "of": "2026-12-03",
+        "pint": "2026-11-23"
+      },
+      "id": "L2_F250SC~3",
+      "mes": "DICIEMBRE",
+      "op": "F250 SC"
+    },
+    {
+      "cliente": "SAGITARIO (V2)",
+      "d": {
+        "acab": "2026-11-30",
+        "chasis": "2026-11-16",
+        "estr": "2026-11-18",
+        "lib": "2026-12-14",
+        "of": "2026-12-03",
+        "pint": "2026-11-24"
+      },
+      "id": "L2_F310SC",
+      "mes": "DICIEMBRE",
+      "op": "F310 SC"
+    },
+    {
+      "cliente": "SAGITARIO (V2)",
+      "d": {
+        "acab": "2026-11-30",
+        "chasis": "2026-11-16",
+        "estr": "2026-11-18",
+        "lib": "2026-12-15",
+        "of": "2026-12-04",
+        "pint": "2026-11-24"
+      },
+      "id": "L2_F310SC~2",
+      "mes": "DICIEMBRE",
+      "op": "F310 SC"
+    },
+    {
+      "cliente": "CORPVECA (360f V1)",
+      "d": {
+        "acab": "2026-12-01",
+        "chasis": "2026-11-17",
+        "estr": "2026-11-19",
+        "lib": "2026-12-15",
+        "of": "2026-12-04",
+        "pint": "2026-11-25"
+      },
+      "id": "L2_Z36FVW",
+      "mes": "DICIEMBRE",
+      "op": "Z36FVW"
+    },
+    {
+      "cliente": "CORPVECA (360f V1)",
+      "d": {
+        "acab": "2026-12-01",
+        "chasis": "2026-11-17",
+        "estr": "2026-11-19",
+        "lib": "2026-12-16",
+        "of": "2026-12-07",
+        "pint": "2026-11-25"
+      },
+      "id": "L2_Z36FVW~2",
+      "mes": "DICIEMBRE",
+      "op": "Z36FVW"
+    },
+    {
+      "cliente": "CORPVECA",
+      "d": {
+        "acab": "2026-12-02",
+        "chasis": "2026-11-18",
+        "estr": "2026-11-23",
+        "lib": "2026-12-16",
+        "of": "2026-12-07",
+        "pint": "2026-11-26"
+      },
+      "id": "L2_TUFVW-17.260",
+      "mes": "DICIEMBRE",
+      "op": "TUFVW-17.260"
+    },
+    {
+      "cliente": "CORPVECA",
+      "d": {
+        "acab": "2026-12-02",
+        "chasis": "2026-11-18",
+        "estr": "2026-11-23",
+        "lib": "2026-12-17",
+        "of": "2026-12-10",
+        "pint": "2026-11-26"
+      },
+      "id": "L2_TUFVW-17.260~2",
+      "mes": "DICIEMBRE",
+      "op": "TUFVW-17.260"
+    }
+  ],
+  "updatedAt": 0
+}

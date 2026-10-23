@@ -1,0 +1,978 @@
+{
+  "areas": [
+    "Fibra de vidrio",
+    "Pintura",
+    "Minifábrica"
+  ],
+  "breaks": [
+    {
+      "e": "12:25",
+      "name": "Refrigerio",
+      "s": "11:40"
+    }
+  ],
+  "models": [
+    {
+      "model": "ZEUS5",
+      "prefix": "Z5"
+    },
+    {
+      "model": "360F",
+      "prefix": "Z36"
+    },
+    {
+      "model": "F250",
+      "prefix": "F250"
+    },
+    {
+      "model": "F310",
+      "prefix": "F310"
+    },
+    {
+      "model": "TUFVW",
+      "prefix": "TUFVW"
+    }
+  ],
+  "pieces": [
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF01",
+      "desc": "LATERALES PAQUETERA 2 NIVEL",
+      "id": "p1",
+      "model": "ZEUS5",
+      "qty": 4,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF02",
+      "desc": "LATERALES PAQUETERA 1NIVEL",
+      "id": "p2",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF03",
+      "desc": "CUBIERTA EN DESTAJE",
+      "id": "p3",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF04",
+      "desc": "PUERTA PILOTO",
+      "id": "p4",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF05",
+      "desc": "PUERTA COPILOTO",
+      "id": "p5",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF06",
+      "desc": "PUERTA MAMPARA",
+      "id": "p6",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF07",
+      "desc": "PUERTA DISCAPACITADOS",
+      "id": "p7",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF08",
+      "desc": "PUERTA DE PASILLO",
+      "id": "p8",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF09",
+      "desc": "CUBIERTA DE CHAPA PILOTO",
+      "id": "p9",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF10",
+      "desc": "CUBIERTA DE CHAPA COPILOTO",
+      "id": "p10",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF11",
+      "desc": "BANDEJA PAQUETERA",
+      "id": "p11",
+      "model": "ZEUS5",
+      "qty": 16,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF12",
+      "desc": "PUNTERAS PILOTO",
+      "id": "p12",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF13",
+      "desc": "PUNTERAS COPILOTO",
+      "id": "p13",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF14",
+      "desc": "DESTAJE MAS PUNTERAS",
+      "id": "p14",
+      "model": "ZEUS5",
+      "qty": 3,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF15",
+      "desc": "ESPEJO PILOTO",
+      "id": "p15",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF16",
+      "desc": "ESPEJO COPILOTO",
+      "id": "p16",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF17",
+      "desc": "CAJA BOTIQUN",
+      "id": "p17",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF18",
+      "desc": "CAJA DE DVD",
+      "id": "p18",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "MF19",
+      "desc": "BOTIQUIN",
+      "id": "p19",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "MF"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "E21-1",
+      "desc": "DUCTO DE BAÑO",
+      "id": "p20",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E21"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "E21-2",
+      "desc": "DEFLECTOR DE TRAMPILLA POSTERIOR",
+      "id": "p21",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E21"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "E21-3",
+      "desc": "DEFLECTOR VOLVO NACIONAL 3UNI",
+      "id": "p22",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E21"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "E21-4",
+      "desc": "BISEL DE PUERTA CAMAROTE",
+      "id": "p23",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E21"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "E21-5",
+      "desc": "RADIADOR",
+      "id": "p24",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E21"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "E21-6",
+      "desc": "LATERAL DE ESCALERA DE 1 X 1",
+      "id": "p25",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "E21"
+    },
+    {
+      "abast": "MF ACABADOS",
+      "area": "Fibra de vidrio",
+      "code": "E21-7",
+      "desc": "TAPA DE MUEBLE FRIGOBAR",
+      "id": "p26",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E21"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-1",
+      "desc": "CUPULA FRONTAL",
+      "id": "p27",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-2",
+      "desc": "CUPULA POSTERIOR",
+      "id": "p28",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-3",
+      "desc": "PANELES DE TECHO",
+      "id": "p29",
+      "model": "ZEUS5",
+      "qty": 7,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-4",
+      "desc": "LATERAL DE ESCALERA ( L )",
+      "id": "p30",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-5",
+      "desc": "LATERAL DE ESCALERA DE 1 X 1",
+      "id": "p31",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-6",
+      "desc": "POSTES 2 NIVEL",
+      "id": "p32",
+      "model": "ZEUS5",
+      "qty": 14,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-7",
+      "desc": "TERMINAL DE POSTE COPILOTO 2 NIVEL",
+      "id": "p33",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-8",
+      "desc": "TERMINAL DE POSTE PILOTO 2 NIVEL",
+      "id": "p34",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-9",
+      "desc": "PLANCHA DE BANCA POSTERIOR",
+      "id": "p35",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-10",
+      "desc": "PLANCHA LATERALES PILOTO Y COPI LOTO",
+      "id": "p36",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-11",
+      "desc": "POSTES 1 NIVEL",
+      "id": "p37",
+      "model": "ZEUS5",
+      "qty": 4,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-12",
+      "desc": "TERMINAL DE POSTE COPILOTO 1 NIVEL",
+      "id": "p38",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-13",
+      "desc": "TERMINAL DE POSTE PILOTO 1 NIVEL",
+      "id": "p39",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-14",
+      "desc": "MAMPARA PILOTO SALON",
+      "id": "p40",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-15",
+      "desc": "MAMPARA COPILOTO SALON",
+      "id": "p41",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-16",
+      "desc": "CUBIERTA DE MAMPARA COPI LOTO PASILLO",
+      "id": "p42",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-17",
+      "desc": "CUBIERTA DE MAMPARA Y BAÑO PILOTO (GUITARRA)",
+      "id": "p43",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-18",
+      "desc": "PLANCHA DE 1X1 TECHO DE BAÑO CAMA",
+      "id": "p44",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E21",
+      "area": "Fibra de vidrio",
+      "code": "E22-19",
+      "desc": "PLANCHA DE 1300 X 1800 TECHO DE BAÑO SEMI",
+      "id": "p45",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E22"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-1",
+      "desc": "CONSOLA 2NIVEL",
+      "id": "p46",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-2",
+      "desc": "MUEBLE FRIGOBAR",
+      "id": "p47",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-3",
+      "desc": "MAMPARA EXTINTOR",
+      "id": "p48",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-4",
+      "desc": "PLANCHA LATERAL ESCALERA SALON 1 X 1",
+      "id": "p49",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-5",
+      "desc": "COLLARIN DE NEVERA",
+      "id": "p50",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-6",
+      "desc": "CUPULA FRONTAL CABINA",
+      "id": "p51",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-7",
+      "desc": "TECHO DE CABINA",
+      "id": "p52",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-8",
+      "desc": "LATERAL PILOTO",
+      "id": "p53",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-9",
+      "desc": "LATERAL COPILOTO",
+      "id": "p54",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-10",
+      "desc": "BISEL PUERTA PILOTO",
+      "id": "p55",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-11",
+      "desc": "PLANCHA DE 1800 X 1300",
+      "id": "p56",
+      "model": "ZEUS5",
+      "qty": 4,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-12",
+      "desc": "CUBIERTA PASILLO (ESCALERA)",
+      "id": "p57",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-13",
+      "desc": "POSTE ESTRIBO",
+      "id": "p58",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-14",
+      "desc": "CUBIERTA CAMAROTE (BOMBA)",
+      "id": "p59",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-15",
+      "desc": "TECHO PILOTO CENTRAL (GRANDE)",
+      "id": "p60",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-16",
+      "desc": "TECHO COPILOTO (PEQUEÑOS)",
+      "id": "p61",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "E23"
+    },
+    {
+      "abast": "E22",
+      "area": "Fibra de vidrio",
+      "code": "E23-17",
+      "desc": "TECHO LATERAL PILOTO ( MEDIANOS)",
+      "id": "p62",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "E23"
+    },
+    {
+      "abast": "E23",
+      "area": "Fibra de vidrio",
+      "code": "E24-1",
+      "desc": "PUERTA PASILLO CABINA",
+      "id": "p63",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E24"
+    },
+    {
+      "abast": "E23",
+      "area": "Fibra de vidrio",
+      "code": "E24-2",
+      "desc": "PUERTA SALON 1NIVEL",
+      "id": "p64",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E24"
+    },
+    {
+      "abast": "E23",
+      "area": "Fibra de vidrio",
+      "code": "E24-3",
+      "desc": "DUCTO DE ADMISION (COBRA)",
+      "id": "p65",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E24"
+    },
+    {
+      "abast": "E23",
+      "area": "Fibra de vidrio",
+      "code": "E24-4",
+      "desc": "BASES DE MONITOR 1 Y 2 NIVEL (según HP)",
+      "id": "p66",
+      "model": "ZEUS5",
+      "qty": 3,
+      "station": "E24"
+    },
+    {
+      "abast": "E23",
+      "area": "Fibra de vidrio",
+      "code": "E24-5",
+      "desc": "DECORATIVO ESTRIBO",
+      "id": "p67",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E24"
+    },
+    {
+      "abast": "E23",
+      "area": "Fibra de vidrio",
+      "code": "E24-6",
+      "desc": "CONSOLA",
+      "id": "p68",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E24"
+    },
+    {
+      "abast": "E23",
+      "area": "Fibra de vidrio",
+      "code": "E24-7",
+      "desc": "DUCTO DE ADMISION ( Y )",
+      "id": "p69",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E24"
+    },
+    {
+      "abast": "E24",
+      "area": "Fibra de vidrio",
+      "code": "E25-1",
+      "desc": "TERMINAL MAMPARA",
+      "id": "p70",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "E25"
+    },
+    {
+      "abast": "E24",
+      "area": "Fibra de vidrio",
+      "code": "E25-2",
+      "desc": "CUBIERTA DE ESPEJO INTERIOR",
+      "id": "p71",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E25"
+    },
+    {
+      "abast": "E24",
+      "area": "Fibra de vidrio",
+      "code": "E25-3",
+      "desc": "CUBRECABLE PILOTO",
+      "id": "p72",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E25"
+    },
+    {
+      "abast": "E24",
+      "area": "Fibra de vidrio",
+      "code": "E25-4",
+      "desc": "CUBRECABLE COPILOTO",
+      "id": "p73",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E25"
+    },
+    {
+      "abast": "E24",
+      "area": "Fibra de vidrio",
+      "code": "E25-5",
+      "desc": "CUBIERTA DE MANGUERA",
+      "id": "p74",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E25"
+    },
+    {
+      "abast": "E24",
+      "area": "Fibra de vidrio",
+      "code": "E25-6",
+      "desc": "TAPA DE CUPULA POSTERIOR",
+      "id": "p75",
+      "model": "ZEUS5",
+      "qty": 3,
+      "station": "E25"
+    },
+    {
+      "abast": "E24",
+      "area": "Fibra de vidrio",
+      "code": "E25-7",
+      "desc": "TAPA DE CUPULA FRONTAL",
+      "id": "p76",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E25"
+    },
+    {
+      "abast": "E24",
+      "area": "Fibra de vidrio",
+      "code": "E25-8",
+      "desc": "CUBIERTA DE ARNES CONTINUACION DE MUEBLE",
+      "id": "p77",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E25"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-1",
+      "desc": "TAPA TANQUE DE AGUA",
+      "id": "p78",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E26"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-2",
+      "desc": "TAPA DE PANTOGRAFICO SUPERIOR",
+      "id": "p79",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E26"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-3",
+      "desc": "TAPA DE CONSOLA 2 NIVEL",
+      "id": "p80",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E26"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-4",
+      "desc": "BISEL DE TABLERO DE CONSOLA",
+      "id": "p81",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E26"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-5",
+      "desc": "CAJA BREAK",
+      "id": "p82",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E26"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-6",
+      "desc": "CUBIERTA DE ENCROCHEPUERTA PILOTO",
+      "id": "p83",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E26"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-7",
+      "desc": "CUBIERTA DE ENCROCHEPUERTA COPILOTO",
+      "id": "p84",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E26"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-8",
+      "desc": "TAPA DE INSPECCION PAQUETERA",
+      "id": "p85",
+      "model": "ZEUS5",
+      "qty": 4,
+      "station": "E26"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-9",
+      "desc": "CUBIERTA FARO LED",
+      "id": "p86",
+      "model": "ZEUS5",
+      "qty": 2,
+      "station": "E26"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-10",
+      "desc": "CAJA BOTIQUN",
+      "id": "p87",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E26"
+    },
+    {
+      "abast": "E25",
+      "area": "Fibra de vidrio",
+      "code": "E26-11",
+      "desc": "DECORATIVO PILOTO Y COPILOTO",
+      "id": "p88",
+      "model": "ZEUS5",
+      "qty": 1,
+      "station": "E26"
+    }
+  ],
+  "schedule": {
+    "0": null,
+    "1": {
+      "e": "19:50",
+      "s": "07:00"
+    },
+    "2": {
+      "e": "19:50",
+      "s": "07:00"
+    },
+    "3": {
+      "e": "19:50",
+      "s": "07:00"
+    },
+    "4": {
+      "e": "19:50",
+      "s": "07:00"
+    },
+    "5": {
+      "e": "17:20",
+      "s": "07:00"
+    },
+    "6": {
+      "e": "16:00",
+      "s": "07:00"
+    }
+  },
+  "stations": {
+    "L1": [],
+    "L2": [
+      {
+        "id": "MF",
+        "name": "MF"
+      },
+      {
+        "id": "E21",
+        "name": "E21"
+      },
+      {
+        "id": "E22",
+        "name": "E22"
+      },
+      {
+        "id": "E23",
+        "name": "E23"
+      },
+      {
+        "id": "E24",
+        "name": "E24"
+      },
+      {
+        "id": "E25",
+        "name": "E25"
+      },
+      {
+        "id": "E26",
+        "name": "E26"
+      }
+    ]
+  }
+}
