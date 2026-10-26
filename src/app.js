@@ -145,20 +145,22 @@ async function persist(path, data){
   if (path.startsWith('checks/')) setTimeout(() => { const w = writeQ.get(path); if (!w?.running && !w?.data) pendingIds.delete(path.slice(7)); }, 2500);
 }
 const saveCfg = async () => {
-  if (!S.profile || S.profile.rol !== 'admin') { toast('Solo el administrador puede guardar parámetros.'); return; }
+  if (!S.profile || S.profile.rol !== 'admin') { toast('Solo el administrador puede guardar parámetros.'); return false; }
   try {
     const client = requireSupabase();
     const { error } = await client.from('config').upsert({id:1, datos:S.cfg, actualizado_por:S.session.user.id});
     if (error) throw error;
-  } catch (e) { toast('No se guardaron los parámetros: ' + (e.message || 'revisa permisos')); }
+    return true;
+  } catch (e) { toast('No se guardaron los parámetros: ' + (e.message || 'revisa permisos')); return false; }
 };
 const savePlan = async L => {
-  if (!S.profile || S.profile.rol !== 'admin') { toast('Solo el administrador puede modificar la programación.'); return; }
+  if (!S.profile || S.profile.rol !== 'admin') { toast('Solo el administrador puede modificar la programación.'); return false; }
   try {
     const client = requireSupabase();
     const { error } = await client.from('planes').upsert({linea:L, buses:S.plans[L], actualizado_por:S.session.user.id});
     if (error) throw error;
-  } catch (e) { toast('No se guardó la programación: ' + (e.message || 'revisa permisos')); }
+    return true;
+  } catch (e) { toast('No se guardó la programación: ' + (e.message || 'revisa permisos')); return false; }
 };
 function reviewFromRow(row) {
   const id = checkId(row.bus_id, row.estacion, row.area);
@@ -920,7 +922,7 @@ document.addEventListener('submit', async e => {
   S.authBusy=false;
   if(error){showLogin('No se pudo ingresar. Revisa el correo y la contraseña.'); const p=$('#loginPassword'); if(p)p.focus();}
 });
-document.addEventListener('click', e => {
+document.addEventListener('click', async e => {
   const t = e.target.closest('button,[data-mclose]'); if (!t) return;
   const ds = t.dataset;
   // ventana de cantidad
@@ -964,15 +966,15 @@ document.addEventListener('click', e => {
     if (S.plan.mode==='replace') S.plans[L] = nb;
     else { const ids = new Set(nb.map(b=>b.id)); S.plans[L] = [...S.plans[L].filter(b=>!ids.has(b.id)), ...nb]; }
     S.plans[L].sort((a,b)=>(a.d?.acab||'9').localeCompare(b.d?.acab||'9'));
-    S.plan.preview=null; savePlan(L); toast(`Programación ${L} guardada`); render(); return; }
-  if (ds.pdel){ const L=S.plan.line; S.plans[L] = S.plans[L].filter(b=>b.id!==ds.pdel); savePlan(L); render(); return; }
-  if ('pclear' in ds){ const L=S.plan.line; if(!confirm(`¿Vaciar toda la programación de ${L}? Las revisiones registradas se conservan.`)) return; S.plans[L]=[]; savePlan(L); render(); return; }
+    S.plan.preview=null; if (await savePlan(L)) toast(`Programación ${L} guardada`); render(); return; }
+  if (ds.pdel){ const L=S.plan.line; S.plans[L] = S.plans[L].filter(b=>b.id!==ds.pdel); await savePlan(L); render(); return; }
+  if ('pclear' in ds){ const L=S.plan.line; if(!confirm(`¿Vaciar toda la programación de ${L}? Las revisiones registradas se conservan.`)) return; S.plans[L]=[]; await savePlan(L); render(); return; }
   // parámetros
   if ('unlock' in ds){ tryUnlock(); return; }
   if ('wipe' in ds){ wipeChecks(); return; }
   if ('plock' in ds){ S.params.unlocked = false; render(); return; }
   if (ds.ptab){ S.params.tab = ds.ptab; render(); return; }
-  if ('psavecfg' in ds){ S.cfg = clone(S.params.draft); buildIndex(); S.params.dirty=false; S.params.draft=null; saveCfg(); toast('Parámetros guardados'); render(); return; }
+  if ('psavecfg' in ds){ S.cfg = clone(S.params.draft); buildIndex(); S.params.dirty=false; S.params.draft=null; if (await saveCfg()) toast('Parámetros guardados'); render(); return; }
   if ('pdiscard' in ds){ S.params.dirty=false; S.params.draft=null; render(); return; }
   const D = S.view==='params' ? draft() : null;
   if (!D) return;
