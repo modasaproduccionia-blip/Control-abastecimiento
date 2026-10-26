@@ -263,10 +263,13 @@ async function init(){
     try { await loadSharedData(); }
     catch(e) { S.session=null; showLogin('No se pudieron cargar los datos: '+(e.message||'')); }
   } else showLogin();
-  const {data} = client.auth.onAuthStateChange(async (_event, sessionNow) => {
+  const {data} = client.auth.onAuthStateChange((_event, sessionNow) => {
     S.session = sessionNow;
-    if (!sessionNow) { S.profile=null; S.loaded={cfg:false,L1:false,L2:false,checks:false}; showLogin(); return; }
-    try { await loadSharedData(); } catch(e) { showLogin('Error al cargar: '+(e.message||'')); }
+    // No consultar Supabase dentro del callback de Auth: evita bloquear el candado de sesión.
+    setTimeout(async () => {
+      if (!sessionNow) { S.profile=null; S.loaded={cfg:false,L1:false,L2:false,checks:false}; showLogin(); return; }
+      try { await loadSharedData(); } catch(e) { showLogin('Error al cargar: '+(e.message||'')); }
+    }, 0);
   });
   authSubscription = data.subscription;
   client.channel('control-abastecimiento-live')
