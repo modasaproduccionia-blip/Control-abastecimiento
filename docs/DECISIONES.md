@@ -7,7 +7,8 @@
 5. **Guardado de piezas**: con la función `marcar_pieza` (cambio atómico de una sola pieza, con bloqueo de fila) para evitar sobrescrituras entre tablets.
 11. **Revisiones solo por funciones**: nadie (ni el administrador) inserta o edita directo la tabla `revisiones`. Se usa:
     - `marcar_pieza`: cualquier usuario con sesión; valida bus (en programación), estación (de su línea), pieza (del modelo, estación y tipo) y estado; la cantidad requerida sale de los parámetros.
-    - `cerrar_revision` (Reportar / Terminar) y `reabrir_revision`: quien inició la revisión o el administrador. **Pendiente de confirmar.**
+    - `cerrar_revision` (Reportar / Terminar): cualquier usuario con sesión; se registra quién la cerró (`cerrado_por`).
+    - `reabrir_revision`: solo quien inició la revisión o el administrador.
     - Borrar: solo el administrador.
 12. **Sin TRUNCATE**: se quitan los permisos por defecto de Supabase (incluye TRUNCATE, que no respeta RLS) y se concede solo lo necesario por tabla.
 13. **Seed seguro de repetir**: `seed.sql` solo inserta lo que falta; si los parámetros o la programación ya existen, no los toca e indica si tienen cambios.

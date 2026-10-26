@@ -9,6 +9,8 @@
 --   * Revisiones: nadie escribe directo en la tabla. Se registran solo con las funciones
 --     marcar_pieza, cerrar_revision y reabrir_revision, que validan los datos contra la
 --     configuración y la programación, y asignan en el servidor quién hizo cada cosa.
+--       - marcar_pieza y cerrar_revision: cualquier usuario con sesión.
+--       - reabrir_revision: quien inició la revisión o el administrador.
 --     Solo el administrador borra revisiones.
 
 -- ========== Perfiles y roles ==========
@@ -233,7 +235,7 @@ begin
 end $$;
 
 -- Reporta o termina una revisión: las piezas sin marcar quedan como "no llegó" y se cierra el tiempo.
--- TODO(confirmar): hoy solo quien la inició o el administrador puede cerrarla.
+-- Cualquier usuario con sesión puede cerrarla (decisión confirmada); queda registrado en cerrado_por.
 create or replace function public.cerrar_revision(p_revision uuid)
 returns public.revisiones
 language plpgsql security definer set search_path = '' as $$
@@ -246,10 +248,7 @@ begin
   if v_uid is null then raise exception 'Inicia sesión para registrar.' using errcode = '42501'; end if;
   select * into r from public.revisiones where id = p_revision for update;
   if not found then raise exception 'La revisión no existe.' using errcode = 'P0002'; end if;
-  if r.creado_por is distinct from v_uid and not public.es_admin() then
-    raise exception 'Solo quien inició la revisión o un administrador puede cerrarla.' using errcode = '42501';
-  end if;
-  if r.fin is not null then return r; end if;   -- ya estaba cerrada: no cambia nada
+  if r.fin is not null then return r; end if;   -- ya estaba cerrada: no cambia nada (ni cerrado_por)
 
   select datos into v_cfg from public.config where id = 1;
   update public.revisiones
@@ -268,7 +267,7 @@ begin
 end $$;
 
 -- Reabre una revisión cerrada. El tiempo sigue desde el inicio original.
--- TODO(confirmar): hoy solo quien la inició o el administrador puede reabrirla.
+-- Solo quien la inició o el administrador puede reabrirla (decisión confirmada).
 create or replace function public.reabrir_revision(p_revision uuid)
 returns public.revisiones
 language plpgsql security definer set search_path = '' as $$
