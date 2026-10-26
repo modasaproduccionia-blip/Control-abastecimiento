@@ -1,6 +1,7 @@
 // Código original del Artifact (respaldo/index-artifact.html), sin cambios de lógica.
 // Único cambio: el logo incrustado ahora se importa desde src/assets/logo-modasa.png.
 import logoModasa from './assets/logo-modasa.png';
+import { supabase, supabaseConfigured, requireSupabase } from './supabase.js';
 
 /* ============ utilidades ============ */
 const $ = (s, r = document) => r.querySelector(s);
@@ -28,13 +29,16 @@ const DEFAULT_CFG = {
   breaks:[{s:'11:40',e:'12:25',name:'Refrigerio'}]
 };
 const S = {
-  cfg: clone(DEFAULT_CFG), plans:{L1:[],L2:[]}, checks:{},
+  cfg: clone(DEFAULT_CFG), plans:{L1:[],L2:[]}, checks:{}, session:null, profile:null, authBusy:false,
   loaded:{cfg:false,L1:false,L2:false,checks:false},
   view:'home', homeMode:'buses', homeLine:'all', homeFilter:'activos', rvArea:null, homeArea:'all', homeQ:'',
   rv:{bus:null, station:null}, dash:{line:'all',model:'all',area:'all',station:'all',from:'',to:''},
   plan:{line:'L2',mode:'replace',preview:null}, params:{tab:'pieces',draft:null,dirty:false,pModel:'all',pStation:'all'},
 };
 let db = null, mode = 'connecting';
+let authSubscription = null;
+const serverRows = new Map();
+const reviewWrites = new Map();
 
 /* ============ índices ============ */
 let IDX = {pieces:new Map(), stationName:new Map()};
@@ -140,9 +144,73 @@ async function persist(path, data){
   q.running = false;
   if (path.startsWith('checks/')) setTimeout(() => { const w = writeQ.get(path); if (!w?.running && !w?.data) pendingIds.delete(path.slice(7)); }, 2500);
 }
-const saveCfg = () => persist('app/config', S.cfg);
-const savePlan = L => persist('plan/'+L, {buses:S.plans[L], updatedAt:Date.now()});
-const saveCheck = id => persist('checks/'+id, S.checks[id]);
+const saveCfg = async () => {
+  if (!S.profile || S.profile.rol !== 'admin') { toast('Solo el administrador puede guardar parámetros.'); return; }
+  try {
+    const client = requireSupabase();
+    const { error } = await client.from('config').upsert({id:1, datos:S.cfg, actualizado_por:S.session.user.id});
+    if (error) throw error;
+  } catch (e) { toast('No se guardaron los parámetros: ' + (e.message || 'revisa permisos')); }
+};
+const savePlan = async L => {
+  if (!S.profile || S.profile.rol !== 'admin') { toast('Solo el administrador puede modificar la programación.'); return; }
+  try {
+    const client = requireSupabase();
+    const { error } = await client.from('planes').upsert({linea:L, buses:S.plans[L], actualizado_por:S.session.user.id});
+    if (error) throw error;
+  } catch (e) { toast('No se guardó la programación: ' + (e.message || 'revisa permisos')); }
+};
+function reviewFromRow(row) {
+  const id = checkId(row.bus_id, row.estacion, row.area);
+  const ck = {serverId:row.id, busId:row.bus_id, op:row.op, cliente:row.cliente, line:row.linea,
+    model:row.modelo, station:row.estacion, area:row.area,
+    start:row.inicio ? new Date(row.inicio).getTime() : null, end:row.fin ? new Date(row.fin).getTime() : null,
+    items:row.items || {}, updatedAt:row.actualizado_en ? new Date(row.actualizado_en).getTime() : Date.now(),
+    serverEnd:row.fin ? new Date(row.fin).getTime() : null, serverItems:clone(row.items || {})};
+  serverRows.set(id, row); return [id, ck];
+}
+async function saveCheck(id) {
+  const ck = S.checks[id]; if (!ck) return;
+  const previous = reviewWrites.get(id) || Promise.resolve();
+  const task = previous.catch(()=>{}).then(async () => {
+    const client = requireSupabase();
+    let row = serverRows.get(id);
+    let serverId = ck.serverId || row?.id || null;
+    if (ck.serverEnd && !ck.end && serverId) {
+      const {data, error} = await client.rpc('reabrir_revision', {p_revision:serverId});
+      if (error) throw error;
+      row = data; ck.serverEnd = null;
+    }
+    const oldItems = ck.serverItems || row?.items || {};
+    for (const [pid, item] of Object.entries(ck.items || {})) {
+      const before = oldItems[pid];
+      if (before && before.st===item.st && Number(before.qty)===Number(item.qty)) continue;
+      const {data, error} = await client.rpc('marcar_pieza', {
+        p_bus_id:ck.busId, p_estacion:ck.station, p_area:ck.area, p_pieza:pid,
+        p_estado:item.st, p_cantidad:Number(item.qty)||0
+      });
+      if (error) throw error;
+      row = data; serverId = data.id;
+      Object.assign(ck, {serverId:data.id, serverItems:clone(data.items || {}), serverEnd:data.fin ? new Date(data.fin).getTime() : null});
+      serverRows.set(id, data);
+    }
+    if (ck.end && !ck.serverEnd && serverId) {
+      const {data, error} = await client.rpc('cerrar_revision', {p_revision:serverId});
+      if (error) throw error;
+      row = data; ck.serverEnd = data.fin ? new Date(data.fin).getTime() : Date.now();
+      ck.serverItems = clone(data.items || {}); serverRows.set(id, data);
+    }
+    if (!serverId && !Object.keys(ck.items || {}).length) return;
+    if (row) {
+      const [mappedId, mapped] = reviewFromRow(row);
+      S.checks[mappedId] = {...ck, serverId:mapped.serverId, serverItems:mapped.serverItems, serverEnd:mapped.serverEnd};
+    }
+  }).catch(e => {
+    toast('No se guardó la revisión: ' + (e.message || 'verifica tu sesión y permisos'));
+  }).finally(() => { if (reviewWrites.get(id) === task) reviewWrites.delete(id); });
+  reviewWrites.set(id, task);
+  return task;
+}
 
 function applyCfg(d){
   S.cfg = Object.assign(clone(DEFAULT_CFG), d||{});
@@ -154,22 +222,58 @@ function setSync(){
   if (mode==='local'){ el.className='sync local'; el.innerHTML='<i></i>Solo en este equipo'; }
   else if (mode==='db'){ el.className='sync'; el.innerHTML='<i></i>En línea con el equipo'; }
 }
+async function loadSharedData() {
+  const client = requireSupabase();
+  const [{data:cfg,error:ce},{data:plans,error:pe},{data:rows,error:re},{data:profile,error:ue}] = await Promise.all([
+    client.from('config').select('datos').eq('id',1).maybeSingle(),
+    client.from('planes').select('linea,buses'),
+    client.from('revisiones').select('*'),
+    client.from('perfiles').select('id,nombre,rol').eq('id',S.session.user.id).single()
+  ]);
+  if (ce) throw ce; if (pe) throw pe; if (re) throw re; if (ue) throw ue;
+  S.profile = profile;
+  if (cfg?.datos) applyCfg(cfg.datos);
+  for (const L of ['L1','L2']) S.plans[L] = plans?.find(p=>p.linea===L)?.buses || [];
+  S.checks = {}; serverRows.clear();
+  for (const row of (rows || [])) { const [id, ck] = reviewFromRow(row); S.checks[id] = ck; }
+  Object.keys(S.loaded).forEach(k=>S.loaded[k]=true);
+  mode = 'db'; setSync(); render();
+}
+function showLogin(message='') {
+  const main=$('#main');
+  main.innerHTML = `<section class="card pad" style="max-width:440px;margin:40px auto">
+    <h2 style="font-size:26px;margin-bottom:8px">Iniciar sesión</h2>
+    <p class="muted">Control de Abastecimiento | MODASA</p>
+    <form id="loginForm" style="display:grid;gap:12px;margin-top:18px">
+      <label>Correo de trabajo<input class="in" id="loginEmail" type="email" autocomplete="username" required></label>
+      <label>Contraseña<input class="in" id="loginPassword" type="password" autocomplete="current-password" required></label>
+      <p id="loginError" class="small" style="color:var(--no);margin:0">${esc(message)}</p>
+      <button class="btn primary big" type="submit" ${S.authBusy?'disabled':''}>${S.authBusy?'Ingresando…':'Ingresar'}</button>
+    </form>
+  </section>`;
+}
 async function init(){
   buildIndex(); renderNav();
-  try { if (window.claude && typeof window.claude.use === 'function') db = await window.claude.use('db'); } catch(e){ db = null; }
-  if (!db){
-    mode = 'local';
-    try { const c = localStorage.getItem('fv:app/config'); if (c) applyCfg(JSON.parse(c)); } catch(e){}
-    for (const L of ['L1','L2']) { try { const p = localStorage.getItem('fv:plan/'+L); if (p) S.plans[L] = JSON.parse(p).buses||[]; } catch(e){} }
-    try { for (let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(k.startsWith('fv:checks/')) S.checks[k.slice(10)] = JSON.parse(localStorage.getItem(k)); } } catch(e){}
-    Object.keys(S.loaded).forEach(k=>S.loaded[k]=true);
-    setSync(); render(); return;
-  }
-  mode = 'db'; setSync();
-  const onErr = e => { if (e?.code==='revoked') toast('Se retiró el acceso a los datos.'); };
-  db.doc('app/config').onSnapshot(s => { applyCfg(s.exists ? clone(s.data()) : null); S.loaded.cfg = true; softRender(); }, onErr);
-  for (const L of ['L1','L2']) db.doc('plan/'+L).onSnapshot(s => { S.plans[L] = s.exists ? clone(s.data().buses||[]) : []; S.loaded[L] = true; softRender(); }, onErr);
-  db.collection('checks').onSnapshot(s => { const m = {}; for (const d of s.docs) m[d.id] = (pendingIds.has(d.id) && S.checks[d.id]) ? S.checks[d.id] : clone(d.data()); for (const id of pendingIds) if (!m[id] && S.checks[id]) m[id] = S.checks[id]; S.checks = m; S.loaded.checks = true; softRender(); }, onErr);
+  if (!supabaseConfigured) { showLogin('Falta configurar la conexión de Supabase.'); return; }
+  const client = requireSupabase();
+  const {data:{session}, error} = await client.auth.getSession();
+  if (error) { showLogin(error.message); return; }
+  S.session = session;
+  if (session) {
+    try { await loadSharedData(); }
+    catch(e) { S.session=null; showLogin('No se pudieron cargar los datos: '+(e.message||'')); }
+  } else showLogin();
+  const {data} = client.auth.onAuthStateChange(async (_event, sessionNow) => {
+    S.session = sessionNow;
+    if (!sessionNow) { S.profile=null; S.loaded={cfg:false,L1:false,L2:false,checks:false}; showLogin(); return; }
+    try { await loadSharedData(); } catch(e) { showLogin('Error al cargar: '+(e.message||'')); }
+  });
+  authSubscription = data.subscription;
+  client.channel('control-abastecimiento-live')
+    .on('postgres_changes',{event:'*',schema:'public',table:'config'},()=>loadSharedData().catch(()=>{}))
+    .on('postgres_changes',{event:'*',schema:'public',table:'planes'},()=>loadSharedData().catch(()=>{}))
+    .on('postgres_changes',{event:'*',schema:'public',table:'revisiones'},()=>loadSharedData().catch(()=>{}))
+    .subscribe();
 }
 
 /* ============ render ============ */
@@ -185,6 +289,9 @@ function renderNav(){
   setTimeout(setHeaderH, 0);
   $('#tabs').innerHTML = VIEWS.map(([k,t]) => `<button data-nav="${k}" aria-current="${S.view===k}">${t}</button>`).join('');
   $('#bottom').innerHTML = VIEWS.map(([k,t,ic]) => `<button data-nav="${k}" aria-current="${S.view===k}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ic}</svg>${t}</button>`).join('');
+  const userLabel = S.session?.user?.email || '';
+  const old = $('#userSession'); if(old) old.remove();
+  if(S.session){ const el=document.createElement('div'); el.id='userSession'; el.style.cssText='display:flex;align-items:center;gap:8px;font-size:12px;margin-left:auto;padding:4px 10px'; el.innerHTML=`<span>${esc(userLabel)} · ${S.profile?.rol==='admin'?'Administrador':'Operario'}</span><button class="btn" data-logout style="padding:5px 8px">Salir</button>`; $('.top-in')?.append(el); }
 }
 const DEFAULT_LOGO = logoModasa;
 const logoHTML = src => `<img src="${src || DEFAULT_LOGO}" alt=""><span class="wordmark">MODASA</span>`;
@@ -198,6 +305,7 @@ function softRender(){
 document.addEventListener('focusout', () => setTimeout(() => { if (pendingRender) { pendingRender = false; softRender(); } }, 50));
 
 function render(){
+  if (!S.session) { showLogin(); return; }
   renderNav();
   const ready = Object.values(S.loaded).every(Boolean);
   const m = $('#main');
@@ -654,9 +762,10 @@ function vLock(){
   </div>`;
 }
 function tryUnlock(){
+  if (S.profile?.rol === 'admin') { S.params.unlocked = true; render(); return; }
   const i = $('#pw'); if (!i) return;
-  if (i.value === PARAMS_PW){ S.params.unlocked = true; render(); }
-  else { $('#pwErr').textContent = 'Contraseña incorrecta.'; i.value = ''; i.focus(); }
+  const err = $('#pwErr'); if (err) err.textContent = 'Solo una cuenta administradora puede acceder a Parámetros.';
+  i.value = ''; i.focus();
 }
 function vParams(){
   if (!S.params.unlocked){ setTimeout(() => $('#pw')?.focus(), 50); return vLock(); }
@@ -796,6 +905,17 @@ function importPieces(text){
 }
 
 /* ============ eventos ============ */
+document.addEventListener('submit', async e => {
+  if (e.target.id !== 'loginForm') return;
+  e.preventDefault();
+  if (!supabaseConfigured) return;
+  S.authBusy = true;
+  const errorEl=$('#loginError'); if(errorEl) errorEl.textContent='';
+  const button=e.target.querySelector('button[type="submit"]'); if(button){button.disabled=true;button.textContent='Ingresando…';}
+  const {error}=await requireSupabase().auth.signInWithPassword({email:$('#loginEmail').value.trim(),password:$('#loginPassword').value});
+  S.authBusy=false;
+  if(error){showLogin('No se pudo ingresar. Revisa el correo y la contraseña.'); const p=$('#loginPassword'); if(p)p.focus();}
+});
 document.addEventListener('click', e => {
   const t = e.target.closest('button,[data-mclose]'); if (!t) return;
   const ds = t.dataset;
@@ -804,6 +924,7 @@ document.addEventListener('click', e => {
   if ('mok' in ds){ saveQty(); return; }
   if (ds.mstep){ const i = $('#mq'); i.value = Math.max(0, Math.min(QM.max, (+i.value||0) + (+ds.mstep))); return; }
   if (ds.nav){ if (ds.nav==='review' && S.view==='review') { S.rv={bus:null,station:null}; } go(ds.nav); return; }
+  if ('logout' in ds){ requireSupabase().auth.signOut().catch(()=>toast('No se pudo cerrar sesión.')); return; }
   // inicio
   if (ds.hmode){ S.homeMode = ds.hmode; render(); return; }
   if (ds.hline){ S.homeLine = ds.hline; render(); return; }
