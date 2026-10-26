@@ -14,6 +14,8 @@ Proyecto: `ggpvrvwteusirfgrpluo` → https://supabase.com/dashboard/project/ggpv
    Debe terminar sin errores.
 2. **Cargar datos iniciales**
    Nueva consulta → pegar `supabase/seed.sql` → Run.
+   El resultado dice `cargado` la primera vez. Si se repite, nunca sobrescribe: responde
+   `ya existía, igual al original` o `ya existía con cambios: NO se tocó`.
    Comprobar:
    ```sql
    select jsonb_array_length(datos->'pieces') as piezas from config;           -- 88
