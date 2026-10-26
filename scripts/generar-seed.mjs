@@ -1,11 +1,11 @@
 // Genera supabase/seed.sql a partir de datos/config.json y datos/plan-L2.json.
-// Uso: npm run seed:sql
+// Uso: npm run seed:sql  (comprobar sin escribir: npm run seed:check)
 // No crea programación L1 (todavía no existe). No necesita claves.
 //
 // El seed es seguro de repetir: solo inserta si la fila no existe. Si los parámetros o la
 // programación L2 ya existen (por ejemplo, editados desde la app), NO se tocan; el resultado
 // indica si siguen iguales al original o si tienen cambios.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 
 const leer = (ruta) => JSON.parse(readFileSync(new URL(`../${ruta}`, import.meta.url), 'utf8'));
 const config = leer('datos/config.json');
@@ -51,5 +51,18 @@ select 'planes L2',
             else 'ya existía con cambios: NO se tocó' end;
 `;
 
-writeFileSync(new URL('../supabase/seed.sql', import.meta.url), sql);
-console.log(`supabase/seed.sql: ${config.pieces.length} piezas, ${planL2.buses.length} buses L2`);
+// Garantías: nunca sobrescribe datos existentes y nunca crea L1.
+const prohibido = [/do\s+update/i, /\bupdate\s+public\./i, /\bdelete\s+from\b/i, /\btruncate\b/i, /'L1'/];
+for (const re of prohibido) if (re.test(sql)) throw new Error(`El seed generado contiene algo prohibido: ${re}`);
+if ((sql.match(/on conflict \([a-z]+\) do nothing/g) || []).length !== 2) throw new Error('Faltan los "on conflict ... do nothing"');
+
+const destino = new URL('../supabase/seed.sql', import.meta.url);
+if (process.argv.includes('--check')) {
+  // npm run seed:check — comprueba que supabase/seed.sql está al día con datos/ y cumple las garantías
+  const actual = existsSync(destino) ? readFileSync(destino, 'utf8') : '';
+  if (actual !== sql) { console.error('supabase/seed.sql no coincide con datos/: ejecuta npm run seed:sql'); process.exit(1); }
+  console.log(`supabase/seed.sql al día: ${config.pieces.length} piezas, ${planL2.buses.length} buses L2, sin sobrescritura, sin L1`);
+} else {
+  writeFileSync(destino, sql);
+  console.log(`supabase/seed.sql: ${config.pieces.length} piezas, ${planL2.buses.length} buses L2`);
+}
