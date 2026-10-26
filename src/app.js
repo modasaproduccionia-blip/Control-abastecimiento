@@ -221,6 +221,7 @@ function applyCfg(d){
 }
 function setSync(){
   const el = $('#sync');
+  if (el) el.hidden = false;
   if (mode==='local'){ el.className='sync local'; el.innerHTML='<i></i>Solo en este equipo'; }
   else if (mode==='db'){ el.className='sync'; el.innerHTML='<i></i>En línea con el equipo'; }
 }
@@ -243,6 +244,9 @@ async function loadSharedData() {
 }
 function showLogin(message='') {
   const main=$('#main');
+  $('#tabs').innerHTML=''; $('#bottom').innerHTML='';
+  $('#userSession')?.remove();
+  const sync=$('#sync'); if(sync) sync.hidden=true;
   main.innerHTML = `<section class="card pad" style="max-width:440px;margin:40px auto">
     <h2 style="font-size:26px;margin-bottom:8px">Iniciar sesión</h2>
     <p class="muted">Control de Abastecimiento | MODASA</p>
