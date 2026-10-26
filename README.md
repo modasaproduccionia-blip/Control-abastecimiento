@@ -8,11 +8,11 @@ Migración de la versión publicada en Claude Artifacts a **Vite + Supabase + Ve
 | Fase | Contenido | Estado |
 |---|---|---|
 | 1 | Estructura del proyecto, respaldo intacto, build para Vercel, borrador SQL | ✅ |
-| 2 | Ejecutar `001_esquema.sql` y `seed.sql` en Supabase, crear usuarios y roles | pendiente |
-| 3 | Conectar la app a Supabase (sesión, roles, `marcar_pieza`, tiempo real) | pendiente |
+| 2 | Ejecutar `001_esquema.sql` y `seed.sql` en Supabase, crear usuarios y roles | en preparación / base ya cargada por el propietario |
+| 3 | Conectar la app a Supabase (sesión, roles, `marcar_pieza`, tiempo real) | en implementación en la rama `integracion-supabase` |
 | 4 | Pruebas con varias sesiones y publicación en Vercel | pendiente |
 
-Hasta la fase 3 la app funciona en modo **"Solo en este equipo"** (guarda en el navegador), igual que el original abierto fuera de Claude.
+La rama `integracion-supabase` añade el cliente oficial de Supabase, inicio de sesión, lectura de datos compartidos y llamadas a las funciones seguras de revisiones. Falta configurar variables en Vercel y completar pruebas antes de publicar. No desplegar esta rama hasta terminar la verificación.
 
 ## Estructura
 
@@ -36,6 +36,15 @@ Hasta la fase 3 la app funciona en modo **"Solo en este equipo"** (guarda en el 
 ├─ docs/PUBLICAR.md          Guía paso a paso: Supabase + Vercel
 ├─ vercel.json · vite.config.js · package.json · .env.example · .nvmrc
 ```
+
+## Variables de entorno
+
+Configurar en Vercel (y en `.env.local` para desarrollo) únicamente:
+
+- `VITE_SUPABASE_URL`: URL pública del proyecto.
+- `VITE_SUPABASE_PUBLISHABLE_KEY`: publishable key (o anon key heredada).
+
+Nunca colocar `service_role`, `sb_secret_...` ni la contraseña de la base de datos en el frontend.
 
 ## Probar localmente
 
