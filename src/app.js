@@ -867,8 +867,8 @@ function pData(){
   </div>`;
 }
 async function wipeChecks(){
+  if (S.profile?.rol !== 'admin') { toast('Solo el administrador puede eliminar revisiones.'); return; }
   const pw = $('#wipePw'); if (!pw) return;
-  if (pw.value !== PARAMS_PW){ $('#wipeErr').textContent = 'Contraseña incorrecta.'; pw.value = ''; pw.focus(); return; }
   const what = $('#wipeWhat').value;
   const ids = Object.keys(S.checks).filter(id => what === 'all' || S.checks[id].busId === what);
   if (!ids.length) return;
@@ -876,11 +876,12 @@ async function wipeChecks(){
   const btn = $('[data-wipe]'); if (btn){ btn.disabled = true; btn.textContent = 'Eliminando…'; }
   let fail = 0;
   for (const id of ids){
-    pendingIds.delete(id); writeQ.delete('checks/'+id);
     try {
-      if (mode === 'local') localStorage.removeItem('fv:checks/'+id);
-      else if (db) await db.doc('checks/'+id).delete();
-      delete S.checks[id];
+      const row = serverRows.get(id) || (S.checks[id]?.serverId ? {id:S.checks[id].serverId} : null);
+      if (!row?.id) { fail++; continue; }
+      const {error} = await requireSupabase().from('revisiones').delete().eq('id',row.id);
+      if (error) throw error;
+      serverRows.delete(id); delete S.checks[id];
     } catch(e){ fail++; }
   }
   toast(fail ? `No se pudieron eliminar ${fail} revisiones.` : 'Revisiones eliminadas');
